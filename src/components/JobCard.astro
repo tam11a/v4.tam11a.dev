@@ -1,0 +1,30 @@
+---
+const { job } = Astro.props;
+---
+
+<div class="group">
+  <div class="flex flex-row w-full items-center justify-between mb-3">
+    <h3
+      class="text-2xl font-display font-bold text-white reveal-text group-hover:text-accent transition duration-300 cursor-hover"
+    >
+      {job.company}
+    </h3>
+    {
+      job.current && (
+        <span class="text-xs font-mono reveal-pop bg-accent/10 border border-accent text-accent px-3 pt-1 pb-2 rounded-full">
+          current
+        </span>
+      )
+    }
+  </div>
+  <div
+    class="text-sm font-mono text-textAccent mb-6 flex flex-wrap gap-x-4 gap-y-1 reveal-text"
+  >
+    <span>{job.role}</span>
+    <span class="text-white/20">/</span>
+    <span>{job.period}</span>
+  </div>
+  <p class="text-textMuted leading-relaxed max-w-2xl text-lg reveal-text">
+    {job.description}
+  </p>
+</div>

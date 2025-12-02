@@ -1,7 +1,8 @@
 ---
 import Section from "@/components/Section.astro";
+import JobCard from "@/components/JobCard.astro";
 import MainLayout from "@/layouts/main/main.layout.astro";
-import { ABOUT_INFO, SKILL_SETS } from "@/scripts/constants";
+import { ABOUT_INFO, SKILL_SETS, JOBS } from "@/scripts/constants";
 ---
 
 <MainLayout>
@@ -25,7 +26,7 @@ import { ABOUT_INFO, SKILL_SETS } from "@/scripts/constants";
         {
           ABOUT_INFO.map((info) => (
             <div>
-              <p class="text-textAccent mb-1 reveal-text">{info.label}</p>
+              <p class="text-textAccent mb-4 reveal-text">{info.label}</p>
               <p
                 class={`reveal-text ${
                   info.highlight ? "text-accent" : "text-foreground"
@@ -54,7 +55,7 @@ import { ABOUT_INFO, SKILL_SETS } from "@/scripts/constants";
       {
         SKILL_SETS.map((skillSet) => (
           <div>
-            <h3 class="text-sm font-mono uppercase tracking-wider text-textAccent mb-6 reveal-text">
+            <h3 class="text-sm font-mono uppercase tracking-wider text-textAccent mb-4 reveal-text">
               {skillSet.category}
             </h3>
             <ul class="space-y-3 text-muted">
@@ -67,6 +68,13 @@ import { ABOUT_INFO, SKILL_SETS } from "@/scripts/constants";
           </div>
         ))
       }
+    </div>
+  </Section>
+
+  {/* Work Section */}
+  <Section title="Work" index="003">
+    <div class="space-y-20">
+      {JOBS.map((job) => <JobCard job={job} />)}
     </div>
   </Section>
 </MainLayout>

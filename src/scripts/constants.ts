@@ -54,23 +54,16 @@ export const JOBS: Job[] = [
     current: true,
   },
   {
-    company: "GRADE LIMITED",
-    role: "Senior Full Stack Engineer",
-    period: "2023 — 2024",
-    description:
-      "Developed a tech-enabled B2B solution to eliminate superfluous middlemen, ensuring pocket-friendly prices through end-to-end digitalization.",
-  },
-  {
     company: "Reserveit BD",
-    role: "Senior Full Stack Engineer",
+    role: "Software Engineer",
     period: "2021 — 2023",
     description:
       "Built Bangladesh's first online restaurant reservation platform. Created a simple, user-friendly application for booking seats for dine-outs.",
   },
   {
-    company: "RayosBD",
-    role: "Team Lead & Engineer",
-    period: "2022",
+    company: "Planet X Inc.",
+    role: "Jr. Software Engineer",
+    period: "2021",
     description:
       "Led development for a multi-vendor marketplace offering 20+ categories. Ensured superior customer support and fulfillment systems.",
   },
