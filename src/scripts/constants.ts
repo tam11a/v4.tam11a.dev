@@ -65,7 +65,7 @@ export const JOBS: Job[] = [
     role: "Jr. Software Engineer",
     period: "2021",
     description:
-      "Led development for a multi-vendor marketplace offering 20+ categories. Ensured superior customer support and fulfillment systems.",
+      "Contributed to various web development projects, focusing on front-end development and user experience enhancements.",
   },
 ];
 
