@@ -1,16 +1,1 @@
 /* Utilities */
-
-.full-screen {
-  @apply w-screen h-screen relative px-6;
-  @media (min-width: 64rem) {
-    padding-inline: max(5vw, 50px);
-  }
-}
-
-#hero-section {
-  @apply lg:pl-0!;
-}
-
-.numeric-caption {
-  @apply text-muted/20 text-4xl font-extrabold font-serif;
-}

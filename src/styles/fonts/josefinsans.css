@@ -1,0 +1,76 @@
+/*
+ @license
+
+ Font Family: Sharpie
+ Designed by: Théo Guillard
+ URL: https://www.fontshare.com/fonts/sharpie
+ © 2025 Indian Type Foundry
+ Sharpie Light - 300
+ Sharpie Regular - 400
+ Sharpie Bold - 700
+ Sharpie Extrabold - 800
+ Sharpie Black - 900
+ Sharpie Variable (Variable font)
+
+*/
+@font-face {
+  font-family: "Sharpie";
+  src: url("/fonts/Sharpie/Sharpie-Light.woff2") format("woff2"),
+    url("/fonts/Sharpie/Sharpie-Light.woff") format("woff"),
+    url("/fonts/Sharpie/Sharpie-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharpie";
+  src: url("/fonts/Sharpie/Sharpie-Regular.woff2") format("woff2"),
+    url("/fonts/Sharpie/Sharpie-Regular.woff") format("woff"),
+    url("/fonts/Sharpie/Sharpie-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharpie";
+  src: url("/fonts/Sharpie/Sharpie-Bold.woff2") format("woff2"),
+    url("/fonts/Sharpie/Sharpie-Bold.woff") format("woff"),
+    url("/fonts/Sharpie/Sharpie-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharpie";
+  src: url("/fonts/Sharpie/Sharpie-Extrabold.woff2") format("woff2"),
+    url("/fonts/Sharpie/Sharpie-Extrabold.woff") format("woff"),
+    url("/fonts/Sharpie/Sharpie-Extrabold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sharpie";
+  src: url("/fonts/Sharpie/Sharpie-Black.woff2") format("woff2"),
+    url("/fonts/Sharpie/Sharpie-Black.woff") format("woff"),
+    url("/fonts/Sharpie/Sharpie-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+/*
+ This is a variable font
+ You can control variable axes as shown below:
+ font-variation-settings: wght 900.0;
+ available axes:
+'wght' (range from 300.0 to 900.0)
+*/
+@font-face {
+  font-family: "Sharpie-Variable";
+  src: url("/fonts/Sharpie/Sharpie-Variable.woff2") format("woff2"),
+    url("/fonts/Sharpie/Sharpie-Variable.woff") format("woff"),
+    url("/fonts/Sharpie/Sharpie-Variable.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}

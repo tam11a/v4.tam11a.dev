@@ -4,7 +4,6 @@ import "@/styles/global.css";
 
 // Components
 import Noise from "@/components/noise.astro";
-import Aside from "@/components/aside.astro";
 
 // import Preloader from "@/components/preloader.astro";
 
@@ -18,21 +17,27 @@ import Aside from "@/components/aside.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Ibrahim Sadik Tamim</title>
   </head>
   <body>
     <!-- <ClientRouter /> -->
     <!-- <Preloader /> -->
     <!-- Noisy Effects on Background -->
     <Noise />
-    <Aside />
     <!-- Main Content: Smooth Scroll Area -->
     <main id="smooth-scroll-content" class="min-h-screen">
-      <slot />
+      <section class="max-w-5xl mx-auto p-3">
+        <slot />
+      </section>
     </main>
     <!-- Scripts -->
     <script src="@/configs/gsap.config.ts"></script>
     <script src="@/scripts/smooth-scroll.ts"></script>
-    <script src="@/scripts/horizontal-wrapper.ts"></script>
   </body>
 </html>

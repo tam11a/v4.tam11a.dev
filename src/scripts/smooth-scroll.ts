@@ -4,10 +4,9 @@ const init = () => {
   // creates the scrollSmoother
   ScrollSmoother.create({
     content: "#smooth-scroll-content",
-    smooth: 1.5,
+    smoothTouch: 0.1, // Slight smoothing on touch devices
     effects: true,
     normalizeScroll: true,
-    smoothTouch: true,
     autoResize: true,
     ease: "power1.out",
     ignoreMobileResize: true,

@@ -1,37 +1,72 @@
 ---
-import HorizontalWrapper from "@/components/horizontal-wrapper.astro";
+import Section from "@/components/Section.astro";
 import MainLayout from "@/layouts/main/main.layout.astro";
-
-// Components
-import Hero from "@/components/home/hero.astro";
+import { ABOUT_INFO, SKILL_SETS } from "@/scripts/constants";
 ---
 
 <MainLayout>
-  <Hero />
-  <section class="full-screen" id="hello">
-    <section class="h-full flex flex-col justify-center items-start">
-      <p class="numeric-caption"># 002</p>
-      <h1 class="text-9xl font-black font-serif">
-        hello<strong>.</strong>
-      </h1>
-    </section>
-  </section>
-  <HorizontalWrapper>
-    <section class="full-screen">
-      <section class="h-full flex flex-col justify-center items-start">
-        <p class="numeric-caption"># 003</p>
-        <h1 class="text-9xl font-black font-serif">
-          world<strong>.</strong>
-        </h1>
-      </section>
-    </section>
-    <section class="full-screen">
-      <section class="h-full flex flex-col justify-center items-start">
-        <p class="numeric-caption"># 004</p>
-        <h1 class="text-9xl font-black font-serif">
-          astro<strong>.</strong>
-        </h1>
-      </section>
-    </section>
-  </HorizontalWrapper>
+  <header class="pb-32 md:pb-52 min-h-[60vh] flex flex-col justify-end">
+    <p class="font-mono text-textAccent text-sm font-semibold mb-6"># 000</p>
+    <h1
+      class="font-black text-6xl md:text-9xl tracking-tighter text-foreground leading-[0.9]"
+    >
+      tam<span class="text-accent">.</span>
+    </h1>
+    <div class="mt-8 text-xl md:text-2xl text-muted max-w-2xl leading-relaxed">
+      Creative Software Engineer based in Dhaka.
+    </div>
+  </header>
+
+  <Section title="About" index="001" hasBorder={false}>
+    <div class="space-y-12 min-h-[40vh]">
+      <div
+        class="grid grid-cols-2 gap-8 text-sm font-mono uppercase tracking-wider"
+      >
+        {
+          ABOUT_INFO.map((info) => (
+            <div>
+              <p class="text-textAccent mb-1 reveal-text">{info.label}</p>
+              <p
+                class={`reveal-text ${
+                  info.highlight ? "text-accent" : "text-foreground"
+                }`}
+              >
+                {info.value}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+      <p
+        class="text-xl leading-relaxed text-foreground/50 font-light reveal-text"
+      >
+        <span class="text-foreground font-normal">
+          I bridge strategic vision with technical expertise.
+        </span>{" "}
+        Proficient in an assortment of technologies including JavaScript, TypeScript,
+        C#, and Python. My focus is ensuring products are robust, scalable, and user-focused.
+      </p>
+    </div>
+  </Section>
+
+  <Section title="Proficiencies" index="002">
+    <div class="grid sm:grid-cols-2 gap-12">
+      {
+        SKILL_SETS.map((skillSet) => (
+          <div>
+            <h3 class="text-sm font-mono uppercase tracking-wider text-textAccent mb-6 reveal-text">
+              {skillSet.category}
+            </h3>
+            <ul class="space-y-3 text-muted">
+              {skillSet.items.map((item) => (
+                <li class="hover:text-accent transition-colors duration-200 cursor-hover reveal-text">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
 </MainLayout>
