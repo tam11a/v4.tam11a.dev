@@ -7,9 +7,8 @@ const initRevealAnimation = () => {
     // Ensure parent is visible before animating
     gsap.set(element, { visibility: "visible" });
     const split = new SplitText(element, {
-      type: "words,lines",
-      linesClass: "line",
-      mask: "lines",
+      type: "words",
+      mask: "words",
     });
     gsap.from(split.words, {
       scrollTrigger: {
