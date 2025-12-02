@@ -1,0 +1,16 @@
+/* 
+
+HOW TO ADD FONTS:
+
+1. Import the font files on /public/fonts/{your-font-folder} folder.
+2. Create a new CSS file in /src/styles/fonts/{your-font-file}.css.
+3. Define the @font-face rules for each font weight/style in that CSS file.
+4. Import the new font CSS file in /src/styles/fonts.css.
+5. Give it a name in /src/styles/theme.css under the --font-sans variable to use with Tailwind CSS.
+*/
+
+/* Sharpie */
+@import "./fonts/sharpie.css";
+
+/* Clash Display */
+@import "./fonts/clash-display.css";

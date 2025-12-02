@@ -1,0 +1,37 @@
+---
+import HorizontalWrapper from "@/components/horizontal-wrapper.astro";
+import MainLayout from "@/layouts/main/main.layout.astro";
+
+// Components
+import Hero from "@/components/home/hero.astro";
+---
+
+<MainLayout>
+  <Hero />
+  <section class="full-screen" id="hello">
+    <section class="h-full flex flex-col justify-center items-start">
+      <p class="numeric-caption"># 002</p>
+      <h1 class="text-9xl font-black font-serif">
+        hello<strong>.</strong>
+      </h1>
+    </section>
+  </section>
+  <HorizontalWrapper>
+    <section class="full-screen">
+      <section class="h-full flex flex-col justify-center items-start">
+        <p class="numeric-caption"># 003</p>
+        <h1 class="text-9xl font-black font-serif">
+          world<strong>.</strong>
+        </h1>
+      </section>
+    </section>
+    <section class="full-screen">
+      <section class="h-full flex flex-col justify-center items-start">
+        <p class="numeric-caption"># 004</p>
+        <h1 class="text-9xl font-black font-serif">
+          astro<strong>.</strong>
+        </h1>
+      </section>
+    </section>
+  </HorizontalWrapper>
+</MainLayout>

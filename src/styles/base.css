@@ -1,0 +1,43 @@
+* {
+  /* Reset CSS */
+  @apply box-border m-0 p-0;
+}
+
+body {
+  /* Setting up base body styles
+    - Background and text colors from theme variables
+    - Font family from theme variable
+    - Overflow handling
+  */
+  @apply relative min-h-screen w-screen max-w-screen overflow-x-hidden overflow-y-hidden font-sans bg-radial to-background from-black text-foreground;
+}
+
+strong {
+  /* Accent color for strong text */
+  @apply text-accent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Headings use serif font */
+  @apply font-serif leading-[100%];
+}
+
+p {
+  /* Paragraph styles */
+  @apply text-muted font-medium tracking-wide;
+}
+
+a {
+  /* Anchor tag styles */
+  @apply text-accent no-underline font-medium;
+  transition: color 0.3s ease;
+
+  &:hover {
+    @apply underline underline-offset-2;
+  }
+}

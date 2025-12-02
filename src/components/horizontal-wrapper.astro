@@ -1,0 +1,13 @@
+---
+// Random ID generator for multiple wrappers on the same page
+const id = `horizontal-wrapper-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<horizontal-wrapper>
+  <section
+    id={id}
+    class="horizontal-wrapper flex flex-row flex-nowrap overflow-hidden w-fit"
+  >
+    <slot />
+  </section>
+</horizontal-wrapper>

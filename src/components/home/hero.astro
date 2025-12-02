@@ -1,0 +1,74 @@
+---
+import Noise from "@/components/noise.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<hero-section>
+  <section class="full-screen flex flex-row gap-16" id="hero-section">
+    <section
+      class="hidden lg:inline h-full w-full max-w-(--max-hero-image-width) mask-b-from-background relative bg-accent overflow-hidden"
+      id="hero-image-container"
+    >
+      <img
+        src="/cover-transparent-bg.png"
+        class="h-screen scale-110 absolute w-max object-center object-cover mix-blend-multiply"
+      />
+      <Noise />
+    </section>
+    <section class="h-full flex flex-col gap-4 justify-end items-start pb-16">
+      <p class="numeric-caption"># 001</p>
+      <h1 class="text-9xl font-black">
+        tam<strong>.</strong>
+      </h1>
+      <p>
+        Digital Creator and Software Engineer based in Bangladesh, passionate
+        about crafting digital products that solve real-world problems. I
+        specialize in building scalable, maintainable, and user-friendly
+        software solutions.
+      </p>
+      <p>
+        Currently bringing ideas to life at
+        <a href="https://definedsolution.com" target="_blank" rel="noopener"
+          >Defined Solution <Icon
+            name="hugeicons:arrow-up-right-03"
+            class="inline"
+          /></a
+        >
+      </p>
+    </section>
+  </section>
+</hero-section>
+
+<script>
+  import { gsap } from "@/configs/gsap.config";
+
+  const initHero = () => {
+    const heroTimeline = gsap.timeline();
+
+    heroTimeline.from(
+      "#hero-image-container",
+      { x: -100, opacity: 0, ease: "power2.out" },
+      0.2
+    );
+
+    heroTimeline.from(
+      "#hero-section img",
+      { scale: 1.4, ease: "power2.out" },
+      0.6
+    );
+
+    heroTimeline.from(
+      "#hero-section h1",
+      { y: 50, opacity: 0, ease: "power2.out" },
+      1
+    );
+
+    heroTimeline.from(
+      "#hero-section p",
+      { y: 30, opacity: 0, ease: "power2.out" },
+      ">-0.4"
+    );
+  };
+
+  document.addEventListener("DOMContentLoaded", initHero);
+</script>

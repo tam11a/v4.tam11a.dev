@@ -1,0 +1,12 @@
+---
+import Noise from "./noise.astro";
+---
+
+<preloader-component>
+  <div id="preloader" class="hidden">
+    <p class="numeric-caption">Loading...</p>
+    <Noise />
+  </div>
+</preloader-component>
+
+<script src="@/scripts/preloader.ts"></script>

@@ -1,0 +1,38 @@
+---
+// Styles
+import "@/styles/global.css";
+
+// Components
+import Noise from "@/components/noise.astro";
+import Aside from "@/components/aside.astro";
+
+// import Preloader from "@/components/preloader.astro";
+
+// Astro Features
+// import { ClientRouter } from "astro:transitions";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <!-- <ClientRouter /> -->
+    <!-- <Preloader /> -->
+    <!-- Noisy Effects on Background -->
+    <Noise />
+    <Aside />
+    <!-- Main Content: Smooth Scroll Area -->
+    <main id="smooth-scroll-content" class="min-h-screen">
+      <slot />
+    </main>
+    <!-- Scripts -->
+    <script src="@/configs/gsap.config.ts"></script>
+    <script src="@/scripts/smooth-scroll.ts"></script>
+    <script src="@/scripts/horizontal-wrapper.ts"></script>
+  </body>
+</html>
