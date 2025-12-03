@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { project } = Astro.props;
+---
+
+<a href={project.link} class="block group cursor-hover">
+  <div class="flex justify-between items-baseline mb-1">
+    <h3
+      class="text-xl md:text-2xl font-display font-bold reveal-text text-white group-hover:text-accent transition duration-300"
+    >
+      {project.title}
+    </h3>
+    <Icon
+      name="hugeicons:arrow-up-right-03"
+      class="w-5 h-5 text-muted group-hover:text-accent transition duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 reveal-arrow"
+    />
+  </div>
+  <p
+    class="text-textAccent font-mono text-sm group-hover:text-white transition-colors duration-300 reveal-text"
+  >
+    {project.description}
+  </p>
+</a>

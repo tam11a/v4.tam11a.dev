@@ -11,18 +11,3 @@ body {
   */
   @apply relative min-h-screen w-screen max-w-screen overflow-x-hidden overflow-y-hidden font-sans bg-black text-foreground selection:bg-accent selection:text-background;
 }
-
-strong {
-  /* Accent color for strong text */
-  @apply text-accent;
-}
-
-a {
-  /* Anchor tag styles */
-  @apply text-accent no-underline font-medium;
-  transition: color 0.3s ease;
-
-  &:hover {
-    @apply underline underline-offset-2;
-  }
-}

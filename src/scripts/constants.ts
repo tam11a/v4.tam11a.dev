@@ -75,21 +75,21 @@ export const HONORS: Honor[] = [
     award: "Winner",
     description: "1st Place | 2024",
     badge: "Winner",
-    badgeColor: "text-primary/80",
+    badgeColor: "text-accent/80",
   },
   {
     title: "National Hackathon",
     award: "Champion",
     description: "National Champion Bangladesh",
     badge: "Champion",
-    badgeColor: "text-textMuted",
+    badgeColor: "text-accent/80",
   },
   {
     title: "Development Competition",
     award: "Runner-up",
     description: "First Runner-up",
     badge: "Runner-up",
-    badgeColor: "text-textMuted",
+    badgeColor: "text-muted",
   },
 ];
 

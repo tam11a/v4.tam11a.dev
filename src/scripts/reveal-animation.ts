@@ -13,7 +13,7 @@ const initRevealAnimation = () => {
     gsap.from(split.words, {
       scrollTrigger: {
         trigger: element,
-        start: "top 85%",
+        start: "top 90%",
         toggleActions: "play none none reverse",
       },
       y: "100%",
@@ -40,6 +40,28 @@ const initRevealAnimation = () => {
         ease: "back.out(1.7)",
         scrollTrigger: {
           trigger: element,
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+
+  const arrowElements = document.querySelectorAll(".reveal-arrow");
+  arrowElements.forEach((el) => {
+    // Ensure parent is visible before animating
+    gsap.set(el, { visibility: "visible" });
+    gsap.fromTo(
+      el,
+      { x: -20, y: 20, opacity: 0 },
+      {
+        x: 0,
+        y: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
           start: "top 90%",
           toggleActions: "play none none reverse",
         },

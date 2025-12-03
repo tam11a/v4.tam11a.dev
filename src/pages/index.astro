@@ -1,11 +1,20 @@
 ---
 import Section from "@/components/Section.astro";
 import JobCard from "@/components/JobCard.astro";
+import HonorCard from "@/components/HonorCard.astro";
 import MainLayout from "@/layouts/main/main.layout.astro";
-import { ABOUT_INFO, SKILL_SETS, JOBS } from "@/scripts/constants";
+import ProjectCard from "@/components/ProjectCard.astro";
+import {
+  ABOUT_INFO,
+  SKILL_SETS,
+  JOBS,
+  HONORS,
+  PROJECTS,
+} from "@/scripts/constants";
 ---
 
 <MainLayout>
+  <!-- Hero Section -->
   <header class="pb-32 md:pb-52 min-h-[60vh] flex flex-col justify-end">
     <p class="font-mono text-textAccent text-sm font-semibold mb-6 reveal-text">
       # 000
@@ -22,6 +31,7 @@ import { ABOUT_INFO, SKILL_SETS, JOBS } from "@/scripts/constants";
     </div>
   </header>
 
+  <!-- About Section -->
   <Section title="About" index="001" hasBorder={false}>
     <div class="space-y-12 min-h-[40vh]">
       <div
@@ -54,6 +64,7 @@ import { ABOUT_INFO, SKILL_SETS, JOBS } from "@/scripts/constants";
     </div>
   </Section>
 
+  <!-- Proficiencies Section -->
   <Section title="Proficiencies" index="002">
     <div class="grid sm:grid-cols-2 gap-12">
       {
@@ -75,10 +86,24 @@ import { ABOUT_INFO, SKILL_SETS, JOBS } from "@/scripts/constants";
     </div>
   </Section>
 
-  {/* Work Section */}
+  <!-- Work Section -->
   <Section title="Work" index="003">
     <div class="space-y-20">
       {JOBS.map((job) => <JobCard job={job} />)}
+    </div>
+  </Section>
+
+  <!-- Honors Section -->
+  <Section title="Honors" index="004">
+    <div class="space-y-12">
+      {HONORS.map((honor) => <HonorCard honor={honor} />)}
+    </div>
+  </Section>
+
+  <!-- Projects Section -->
+  <Section title="Projects" index="005">
+    <div class="space-y-12">
+      {PROJECTS.map((project) => <ProjectCard project={project} />)}
     </div>
   </Section>
 </MainLayout>

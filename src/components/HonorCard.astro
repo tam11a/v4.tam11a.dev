@@ -1,0 +1,27 @@
+---
+const { honor } = Astro.props;
+---
+
+<div class="transition-colors duration-300">
+  <div class="flex items-center justify-between mb-2">
+    <h3
+      class="text-xl font-display font-bold text-foreground cursor-hover reveal-text"
+    >
+      {honor.title}
+    </h3>
+    {
+      honor.badge && (
+        <span
+          class={`text-xs font-mono px-3 py-1 rounded-full border border-foreground/5 reveal-pop ${
+            honor.badgeColor || "text-muted"
+          }`}
+        >
+          {honor.badge}
+        </span>
+      )
+    }
+  </div>
+  <div class="text-sm font-mono text-textAccent reveal-text">
+    {honor.description}
+  </div>
+</div>
