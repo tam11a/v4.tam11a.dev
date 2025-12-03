@@ -1,9 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-    <path d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z" />
-    <style>
-        path { fill: #000; }
-        @media (prefers-color-scheme: dark) {
-            path { fill: #FFF; }
-        }
-    </style>
+<svg width="680" height="680" viewBox="0 0 680 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="680" height="680" rx="60" fill="#080808"/>
+<rect width="680" height="680" rx="60" fill="url(#paint0_radial_250_9)" fill-opacity="0.8"/>
+<g filter="url(#filter0_d_250_9)">
+<path d="M393.374 527.724C393.374 516.495 397.457 507.052 405.624 499.396C414.301 491.229 423.744 487.146 433.953 487.146C443.14 487.146 451.818 491.229 459.984 499.396C468.662 507.052 473 516.495 473 527.724C473 539.975 468.662 549.928 459.984 557.584C451.818 564.73 443.14 568.303 433.953 568.303C423.744 568.303 414.301 564.73 405.624 557.584C397.457 549.928 393.374 539.975 393.374 527.724Z" fill="#F53F06"/>
+<path d="M266.172 111.984H337.376V252.862H424.659V308.753H337.376V568.304H266.172V308.753H207.983V252.862H266.172V111.984Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_d_250_9" x="202.983" y="106.984" width="275.017" height="466.32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_250_9"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_250_9" result="shape"/>
+</filter>
+<radialGradient id="paint0_radial_250_9" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-150.5 -138.5) rotate(42.8045) scale(766.005)">
+<stop stop-color="#F53F06"/>
+<stop offset="1" stop-color="#621B05" stop-opacity="0"/>
+</radialGradient>
+</defs>
 </svg>
