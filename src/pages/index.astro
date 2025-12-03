@@ -10,7 +10,9 @@ import {
   JOBS,
   HONORS,
   PROJECTS,
+  CONTACTS,
 } from "@/scripts/constants";
+import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout>
@@ -106,4 +108,57 @@ import {
       {PROJECTS.map((project) => <ProjectCard project={project} />)}
     </div>
   </Section>
+
+  <!-- Footer / Contact -->
+  <div class="mb-20">
+    <!-- <AnimatedSeparator class="mb-12" /> -->
+    <footer class="grid md:grid-cols-4 gap-y-8 gap-x-12">
+      <div class="md:col-span-1">
+        <span class="font-mono text-textAccent text-sm mb-4 block reveal-text">
+          # 006
+        </span>
+        <h2
+          class="text-2xl font-display font-bold text-white tracking-tight reveal-text"
+        >
+          Contact<span class="text-accent">.</span>
+        </h2>
+      </div>
+      <div class="md:col-span-3 flex flex-col space-y-6">
+        {
+          CONTACTS.map((contact) => (
+            <a
+              href={contact.href}
+              target={contact.href.startsWith("mailto") ? undefined : "_blank"}
+              rel={
+                contact.href.startsWith("mailto")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
+              class="group block cursor-hover relative"
+            >
+              <div class="flex items-center justify-between pb-6">
+                <span class="text-muted group-hover:text-accent transition font-mono text-sm uppercase tracking-wider reveal-text">
+                  {contact.label}
+                </span>
+                <span class="text-muted group-hover:text-accent transition flex items-center gap-3 font-mono text-sm reveal-text">
+                  {contact.value}{" "}
+                  <Icon
+                    name={"hugeicons:arrow-up-right-03"}
+                    class="w-4 h-4 reveal-arrow"
+                  />
+                </span>
+              </div>
+              {/* <AnimatedSeparator class="transition-colors duration-300 group-hover:bg-white" /> */}
+            </a>
+          ))
+        }
+      </div>
+    </footer>
+  </div>
+
+  <div
+    class="text-xs font-mono text-textAccent text-center pb-10 uppercase tracking-widest reveal-text"
+  >
+    &copy; {new Date().getFullYear()} Ibrahim Sadik Tamim
+  </div>
 </MainLayout>
