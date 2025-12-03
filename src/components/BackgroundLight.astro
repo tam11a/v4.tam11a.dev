@@ -1,0 +1,46 @@
+---
+
+---
+
+<background-light>
+  <div
+    class="fixed inset-0 pointer-events-none z-0 opacity-[0.5] overflow-hidden"
+  >
+    {/* Wrapper controls the position of the entire light source */}
+    {
+      /* Starting position: Top-Left (off-screen center to cast rays into view) */
+    }
+    <div class="absolute -top-[18vh] -left-[22vw] w-[40vw] h-[40vh]">
+      {/* Core Sun Glow (The hot center) */}
+      <div class="absolute inset-0 bg-accent/40 blur-[80px] rounded-full"></div>
+
+      {/* Inner Bright Core */}
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-accent blur-[30px] rounded-full"
+      >
+      </div>
+    </div>
+  </div>
+</background-light>
+
+<script>
+  import { gsap } from "@/configs/gsap.config.ts";
+
+  const initBGLight = () => {
+    const light = document.querySelector("background-light > div > div");
+
+    // Light Movement Animation
+    gsap.to(light, {
+      y: "100vh",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "body",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 0.1, // quick response to scroll
+      },
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", initBGLight);
+</script>
