@@ -1,9 +1,9 @@
 ---
-const { title, index, hasBorder = false } = Astro.props;
+const { title, index, hasBorder = true } = Astro.props;
 ---
 
 <section class="mb-24 md:mb-32">
-  <!-- {hasBorder && <AnimatedSeparator class="mb-12" />} -->
+  {hasBorder && <hr class="animated-separator mb-12" />}
 
   <div class="grid md:grid-cols-4 gap-y-8 gap-x-12">
     <div class="md:col-span-1 flex flex-col items-start">

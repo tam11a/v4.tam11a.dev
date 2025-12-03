@@ -1,1 +1,5 @@
 /* Components */
+
+hr {
+  @apply h-px w-full border-white/10 origin-left transform;
+}

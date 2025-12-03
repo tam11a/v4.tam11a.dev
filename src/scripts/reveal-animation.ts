@@ -1,8 +1,8 @@
 import { gsap, SplitText } from "@/configs/gsap.config";
 
 const initRevealAnimation = () => {
+  // Reveal Text Animation
   const revealElements = document.querySelectorAll(".reveal-text");
-
   revealElements.forEach((element) => {
     // Ensure parent is visible before animating
     gsap.set(element, { visibility: "visible" });
@@ -25,8 +25,8 @@ const initRevealAnimation = () => {
     });
   });
 
+  // Reveal Pop Animation
   const revealPopElements = document.querySelectorAll(".reveal-pop");
-
   revealPopElements.forEach((element) => {
     // Ensure parent is visible before animating
     gsap.set(element, { visibility: "visible" });
@@ -47,6 +47,7 @@ const initRevealAnimation = () => {
     );
   });
 
+  // Reveal Arrow Animation
   const arrowElements = document.querySelectorAll(".reveal-arrow");
   arrowElements.forEach((el) => {
     // Ensure parent is visible before animating
@@ -60,6 +61,27 @@ const initRevealAnimation = () => {
         opacity: 1,
         duration: 0.6,
         ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+
+  // Reveal Separator Animation
+  const separatorElements = document.querySelectorAll(".animated-separator");
+  separatorElements.forEach((el) => {
+    // Ensure parent is visible before animating
+    gsap.set(el, { visibility: "visible" });
+    gsap.fromTo(
+      el,
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        duration: 1.5,
+        ease: "expo.out",
         scrollTrigger: {
           trigger: el,
           start: "top 90%",
