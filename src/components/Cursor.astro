@@ -1,0 +1,122 @@
+<cursor>
+  <!-- Cursor Dot -->
+  <div
+    id="cursor-dot"
+    class="hidden fixed top-0 left-0 w-2 h-2 bg-accent rounded-full z-9999 pointer-events-none custom-cursor"
+  >
+  </div>
+  <!-- Cursor SVG -->
+  <svg
+    id="cursor-svg"
+    class="hidden fixed top-0 left-0 w-12 h-12 z-9998 pointer-events-none custom-cursor overflow-visible"
+    viewBox="0 0 36 36"
+  >
+    <!-- Track Circle -->
+    <circle
+      id="cursor-progress-stroke"
+      cx="18"
+      cy="18"
+      r="16"
+      fill="none"
+      class="stroke-white/20"
+      stroke-width="0.5"></circle>
+    <!-- Progress Circle -->
+    <circle
+      id="cursor-progress"
+      cx="18"
+      cy="18"
+      r="16"
+      fill="none"
+      class="stroke-accent/70"
+      stroke-width="1"
+      stroke-dasharray="100"
+      stroke-dashoffset="100"
+      stroke-linecap="round"
+      transform="rotate(-90 18 18)"></circle>
+  </svg>
+</cursor>
+
+<script>
+  import { gsap } from "@/configs/gsap.config.ts";
+
+  const cursorAnimation = () => {
+    const cursorDot = document.getElementById("cursor-dot");
+    const cursorSvg = document.getElementById("cursor-svg");
+    const progressCircle = document.getElementById("cursor-progress");
+    const progressStroke = document.getElementById("cursor-progress-stroke");
+
+    if (!cursorDot || !cursorSvg || !progressCircle || !progressStroke) return;
+
+    // Only enable custom cursor on non-touch devices
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      cursorDot.style.display = "none";
+      cursorSvg.style.display = "none";
+      return;
+    } else {
+      cursorDot.style.display = "inline";
+      cursorSvg.style.display = "inline";
+    }
+
+    // Initial position off-screen
+    gsap.set([cursorDot, cursorSvg], {
+      xPercent: -50,
+      yPercent: -50,
+      opacity: 0,
+    });
+
+    const onMouseMove = (e: MouseEvent) => {
+      // Fade in on first move
+      gsap.to([cursorDot, cursorSvg], {
+        opacity: 1,
+        duration: 0.3,
+        overwrite: "auto",
+      });
+
+      // Dot follows immediately
+      gsap.to(cursorDot, { x: e.clientX, y: e.clientY, duration: 0.1 });
+      // SVG follows with lag
+      gsap.to(cursorSvg, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    };
+
+    window.addEventListener("mousemove", onMouseMove);
+
+    // Hover Effects
+    const hoverElements = document.querySelectorAll(".cursor-hover");
+    hoverElements.forEach((el) => {
+      el.addEventListener("mouseenter", () => {
+        gsap.to(cursorDot, {
+          scale: 4,
+          backgroundColor: "rgba(245, 63, 6, 0.2)",
+          duration: 0.3,
+        });
+      });
+      el.addEventListener("mouseleave", () => {
+        gsap.to(cursorDot, {
+          scale: 1,
+          backgroundColor: "rgba(245, 63, 6, 1)",
+          duration: 0.3,
+        });
+      });
+    });
+
+    window.addEventListener("load", () => {
+      gsap.to(progressCircle, {
+        strokeDashoffset: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.2,
+        },
+      });
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", cursorAnimation);
+</script>
