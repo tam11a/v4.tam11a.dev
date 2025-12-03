@@ -1,43 +1,64 @@
-# Astro Starter Kit: Minimal
+# Personal Portfolio Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+![Portfolio Website Thumbnail](./public/thumbnail.png)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The website is built using Astro, a modern static site builder framework, and leverages GSAP for smooth scrolling and animations. It features sections for About, Proficiencies, Work, Honors, Projects, and Contact information, all designed with a clean and responsive layout.
 
-## 🚀 Project Structure
+## Features
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Smooth Scrolling**: Implemented using GSAP for a seamless user experience.
+- **Responsive Design**: Ensures optimal viewing on all devices.
+- **Modular Components**: Built with Astro components for easy maintenance and scalability.
+- **Interactive Elements**: Engaging animations and transitions to enhance user interaction.
+- **SEO Optimized**: Structured for better search engine visibility.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Technologies Used
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- [Astro](https://astro.build/)
+- [GSAP (GreenSock Animation Platform)](https://greensock.com/gsap/)
+- HTML5, CSS3, JavaScript
+- Responsive Web Design Principles
+- Git for version control
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Getting Started
 
-Any static assets, like images, can be placed in the `public/` directory.
+To run the project locally, follow these steps:
 
-## 🧞 Commands
+1. Clone the repository:
 
-All commands are run from the root of the project, from a terminal:
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+    cd your-repo-name
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+2. Install dependencies:
 
-## 👀 Want to learn more?
+   ```bash
+   npm install
+   ```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:4321` to view the website.
+
+## Deployment
+
+The website can be deployed using various static site hosting services such as Vercel, Netlify, or GitHub Pages. Follow the respective platform's instructions for deploying an Astro project.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any inquiries or feedback, please reach out via the contact section on the website or email me at [ibrahimsadiktamim@gmail.com](mailto:ibrahimsadiktamim@gmail.com).
+
+Thank you for visiting my portfolio website!
