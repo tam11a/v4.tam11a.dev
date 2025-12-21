@@ -33,8 +33,8 @@ export const SKILL_SETS: SkillSet[] = [
     items: [
       "Astro",
       "React / Next.js",
-      "Node.js / NestJS",
-      "TypeScript / JavaScript",
+      "Node.js / Nest.js",
+      "JavaScript / TypeScript",
       "SQL / NoSQL",
     ],
   },
