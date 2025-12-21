@@ -72,15 +72,15 @@ export const JOBS: Job[] = [
 export const HONORS: Honor[] = [
   {
     title: "CSE Fest 2K24 Hackathon",
-    award: "Winner",
-    description: "1st Place | 2024",
-    badge: "Winner",
+    award: "Champion",
+    description: "1st Place — 2024",
+    badge: "Champion",
     badgeColor: "text-accent/80",
   },
   {
     title: "NASA Space Apps Challenge",
     award: "Champion",
-    description: "National Champion Bangladesh",
+    description: "National Champion Bangladesh — 2020",
     badge: "Champion",
     badgeColor: "text-accent/80",
   }
