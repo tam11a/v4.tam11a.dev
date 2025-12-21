@@ -33,8 +33,8 @@ export const SKILL_SETS: SkillSet[] = [
     items: [
       "Astro",
       "React / Next.js",
+      "Node.js / NestJS",
       "TypeScript / JavaScript",
-      "C# / Python",
       "SQL / NoSQL",
     ],
   },
@@ -47,15 +47,15 @@ export const SKILL_SETS: SkillSet[] = [
 export const JOBS: Job[] = [
   {
     company: "Defined Solution",
-    role: "Head of Creative Design & Dev",
-    period: "2024 — Present",
+    role: "Senior Software Engineer",
+    period: "2023 ~ Present",
     description:
       "Spearheading the development of cutting-edge web applications. Playing a pivotal role in shaping the technical roadmap and aligning technology with business objectives.",
     current: true,
   },
   {
     company: "Reserveit BD",
-    role: "Software Engineer",
+    role: "Senior Full-Stack Engineer",
     period: "2021 — 2023",
     description:
       "Built Bangladesh's first online restaurant reservation platform. Created a simple, user-friendly application for booking seats for dine-outs.",
@@ -78,35 +78,33 @@ export const HONORS: Honor[] = [
     badgeColor: "text-accent/80",
   },
   {
-    title: "National Hackathon",
+    title: "NASA Space Apps Challenge",
     award: "Champion",
     description: "National Champion Bangladesh",
     badge: "Champion",
     badgeColor: "text-accent/80",
-  },
-  {
-    title: "Development Competition",
-    award: "Runner-up",
-    description: "First Runner-up",
-    badge: "Runner-up",
-    badgeColor: "text-muted",
-  },
+  }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    title: "Defined Solution",
-    description: "Enterprise Software Architecture",
+    title: "Munchies Bangladesh",
+    description: "UI Case Study of a Food and Grocery Delivery Platform",
     link: "#",
   },
   {
     title: "Grade Limited",
-    description: "B2B E-commerce & Digitalization",
+    description: "B2B E Commerce & Digitalization",
     link: "#",
   },
   {
-    title: "Reserveit BD",
-    description: "Restaurant Reservation Platform",
+    title: "Rayos BD",
+    description: "B2C E Commerce Platform",
+    link: "#",
+  },
+  {
+    title: "PND Service BD",
+    description: "B2B & B2C E Commerce Platform",
     link: "#",
   },
 ];
