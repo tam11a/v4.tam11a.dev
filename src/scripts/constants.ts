@@ -8,7 +8,7 @@ import type {
 } from "./types";
 
 export const ABOUT_INFO: AboutInfo[] = [
-  { label: "Role", value: "Creative Software Engineer" },
+  { label: "Role", value: "Senior Software Engineer" },
   { label: "Based in", value: "Dhaka, Bangladesh" },
   { label: "Experience", value: "4+ Years" },
   { label: "Status", value: "● Open to Work", highlight: true },
@@ -98,12 +98,12 @@ export const PROJECTS: Project[] = [
     link: "#",
   },
   {
-    title: "Rayos BD",
+    title: "Rayos Bangladesh",
     description: "B2C E Commerce Platform",
     link: "#",
   },
   {
-    title: "PND Service BD",
+    title: "PND Service Bangladesh",
     description: "B2B & B2C E Commerce Platform",
     link: "#",
   },
