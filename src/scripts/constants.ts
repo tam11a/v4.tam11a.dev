@@ -48,7 +48,7 @@ export const JOBS: Job[] = [
   {
     company: "Defined Solution",
     role: "Senior Software Engineer",
-    period: "2023 ~ Present",
+    period: "2023 — Present",
     description:
       "Spearheading the development of cutting-edge web applications. Playing a pivotal role in shaping the technical roadmap and aligning technology with business objectives.",
     current: true,
@@ -62,7 +62,7 @@ export const JOBS: Job[] = [
   },
   {
     company: "Planet X Inc.",
-    role: "Jr. Software Engineer",
+    role: "Jr. Full-Stack Engineer",
     period: "2021",
     description:
       "Contributed to various web development projects, focusing on front-end development and user experience enhancements.",
