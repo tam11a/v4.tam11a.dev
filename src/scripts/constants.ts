@@ -8,7 +8,7 @@ import type {
 } from "./types";
 
 export const ABOUT_INFO: AboutInfo[] = [
-  { label: "Role", value: "Creative Lead & Software Engineer" },
+  { label: "Role", value: "Creative Software Engineer" },
   { label: "Based in", value: "Dhaka, Bangladesh" },
   { label: "Experience", value: "4+ Years" },
   { label: "Status", value: "● Open to Work", highlight: true },
