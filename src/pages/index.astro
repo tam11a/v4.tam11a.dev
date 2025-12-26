@@ -50,7 +50,7 @@ import { Icon } from "astro-icon/components";
                   info.highlight ? "text-accent" : "text-foreground"
                 }`}
               >
-                {info.value}
+                {info.html ? <p set:html={info.value} /> : info.value}
               </p>
             </div>
           ))

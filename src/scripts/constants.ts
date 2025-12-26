@@ -11,7 +11,13 @@ export const ABOUT_INFO: AboutInfo[] = [
   { label: "Role", value: "Senior Software Engineer" },
   { label: "Based in", value: "Dhaka, Bangladesh" },
   { label: "Experience", value: "4+ Years" },
-  { label: "Status", value: "● Open to Work", highlight: true },
+  {
+    label: "Status",
+    value:
+      '<p class="reveal-text text-accent">● Open to Work &bull; <a href="/resume_ibrahimsadiktamim.pdf" target="_blank" rel="noopener noreferrer" class="cursor-hover">Resume</a></p>',
+    html: true,
+    highlight: true,
+  },
 ];
 
 export const SKILL_SETS: SkillSet[] = [
@@ -83,7 +89,7 @@ export const HONORS: Honor[] = [
     description: "National Champion Bangladesh — 2020",
     badge: "Champion",
     badgeColor: "text-accent/80",
-  }
+  },
 ];
 
 export const PROJECTS: Project[] = [

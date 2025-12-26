@@ -1,6 +1,7 @@
 export interface AboutInfo {
   label: string;
   value: string;
+  html?: boolean;
   highlight?: boolean;
 }
 
