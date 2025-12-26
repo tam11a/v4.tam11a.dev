@@ -15,6 +15,8 @@ import Cursor from "@/components/Cursor.astro";
 const {
   title = "Ibrahim Sadik Tamim - tam11a ✦ coder, designer, thinker",
   description = "Portfolio of Ibrahim Sadik Tamim, a versatile coder, designer, and thinker crafting digital experiences with passion and precision.",
+  thumbnail = "/thumbnail.png",
+  url = "https://tam11a.dev/",
 } = Astro.props;
 ---
 
@@ -34,13 +36,21 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- OG -->
-    <meta property="og:image" content="/thumbnail.png" />
-    <meta property="og:image:alt" content={title} />
+    <!-- Facebook Meta Tags -->
+
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://tam11a.dev" />
-    <meta property="og:type" content="website" />
+    <meta property="og:image" content={thumbnail} />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="tam11a.dev" />
+    <meta property="twitter:url" content={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={thumbnail} />
   </head>
   <body>
     <!-- <ClientRouter /> -->
