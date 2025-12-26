@@ -13,6 +13,8 @@ export default defineConfig({
     icon({
       include: {
         hugeicons: ["*"],
+        "vscode-icons": ["*"],
+        "simple-icons": ["*"],
       },
     }),
   ],
