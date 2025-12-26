@@ -159,8 +159,35 @@ import { Icon } from "astro-icon/components";
   </div>
 
   <div
-    class="text-xs font-mono text-textAccent text-center pb-[10vh] uppercase tracking-widest reveal-text"
+    class="text-xs font-mono text-textAccent text-center pb-[10vh] uppercase tracking-widest space-y-5"
   >
-    &copy; {new Date().getFullYear()} Ibrahim Sadik Tamim
+    <p class="reveal-text">
+      &copy; {new Date().getFullYear()} Ibrahim Sadik Tamim
+    </p>
+    <p class="inline-flex items-center justify-center gap-1 reveal-text">
+      Built with <a
+        href="https://astro.build"
+        target="_blank"
+        class="text-xl reveal-pop cursor-hover"
+        ><Icon name="vscode-icons:file-type-astro" title="Astro" /></a
+      >, <a
+        href="https://tailwindcss.com"
+        target="_blank"
+        class="text-xl reveal-pop cursor-hover"
+        ><Icon name="vscode-icons:file-type-tailwind" title="Tailwind CSS" /></a
+      > & <a
+        href="https://gsap.com"
+        target="_blank"
+        class="text-3xl reveal-pop text-[#88ce02] cursor-hover"
+        ><Icon name="simple-icons:gsap" title="GSAP" /></a
+      >
+    </p>
+    <p class="reveal-pop mt-10">
+      <a
+        href="/resume_ibrahimsadiktamim.pdf"
+        class="text-accent px-3 py-1 rounded-full border border-foreground/5 hover:border-accent hover:bg-accent/10 reveal-pop transition cursor-hover"
+        >Download Resume</a
+      >
+    </p>
   </div>
 </MainLayout>
