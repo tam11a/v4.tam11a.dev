@@ -14,7 +14,7 @@ export const ABOUT_INFO: AboutInfo[] = [
   {
     label: "Status",
     value:
-      '<p class="reveal-text text-accent">● Open to Work &bull; <a href="/resume_ibrahimsadiktamim.pdf" target="_blank" rel="noopener noreferrer" class="cursor-hover">Resume</a></p>',
+      '<p class="reveal-text text-accent">● Open to Work <a href="/resume_ibrahimsadiktamim.pdf" target="_blank" rel="noopener noreferrer" class="cursor-hover hidden md:inline-block">&bull; Resume</a></p>',
     html: true,
     highlight: true,
   },
