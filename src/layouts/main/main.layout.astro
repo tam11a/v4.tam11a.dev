@@ -11,6 +11,11 @@ import Cursor from "@/components/Cursor.astro";
 
 // Astro Features
 // import { ClientRouter } from "astro:transitions";
+
+const {
+  title = "Ibrahim Sadik Tamim - tam11a ✦ coder, designer, thinker",
+  description = "Portfolio of Ibrahim Sadik Tamim, a versatile coder, designer, and thinker crafting digital experiences with passion and precision.",
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -25,7 +30,17 @@ import Cursor from "@/components/Cursor.astro";
       href="https://fonts.googleapis.com/css2?family=Anta&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
       rel="stylesheet"
     />
-    <title>Ibrahim Sadik Tamim</title>
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- OG -->
+    <meta property="og:image" content="/thumbnail.png" />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://tam11a.dev" />
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <!-- <ClientRouter /> -->
