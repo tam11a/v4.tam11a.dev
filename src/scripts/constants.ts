@@ -52,9 +52,19 @@ export const SKILL_SETS: SkillSet[] = [
 
 export const JOBS: Job[] = [
   {
+    company: "Cuebites Digital",
+    role: "Software Engineer",
+    period: "2026 — Present",
+    country: "AU",
+    description:
+      "Orchestrating the delivery of scalable, high-performance software solutions while bridging the gap between technical excellence and strategic business growth.",
+    current: true,
+  },
+  {
     company: "Defined Solution",
     role: "Senior Software Engineer",
     period: "2023 — Present",
+    country: "BD",
     description:
       "Spearheading the development of cutting-edge web applications. Playing a pivotal role in shaping the technical roadmap and aligning technology with business objectives.",
     current: true,
@@ -63,6 +73,7 @@ export const JOBS: Job[] = [
     company: "Reserveit BD",
     role: "Senior Full-Stack Engineer",
     period: "2021 — 2023",
+    country: "BD",
     description:
       "Built Bangladesh's first online restaurant reservation platform. Created a simple, user-friendly application for booking seats for dine-outs.",
   },
@@ -70,6 +81,7 @@ export const JOBS: Job[] = [
     company: "Planet X Inc.",
     role: "Jr. Full-Stack Engineer",
     period: "2021",
+    country: "BD",
     description:
       "Contributed to various web development projects, focusing on front-end development and user experience enhancements.",
   },
@@ -96,6 +108,11 @@ export const PROJECTS: Project[] = [
   {
     title: "Munchies Bangladesh",
     description: "UI Case Study of a Food and Grocery Delivery Platform",
+    link: "#",
+  },
+  {
+    title: "Sultan's Dine",
+    description: "UI Case Study of a Food Delivery App for a Restaurant",
     link: "#",
   },
   {

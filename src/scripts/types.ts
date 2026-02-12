@@ -10,6 +10,7 @@ export interface Job {
   role: string;
   period: string;
   description: string;
+  country?: string;
   current?: boolean;
 }
 
