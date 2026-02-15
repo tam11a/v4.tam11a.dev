@@ -67,7 +67,6 @@ export const JOBS: Job[] = [
     country: "BD",
     description:
       "Spearheading the development of cutting-edge web applications. Playing a pivotal role in shaping the technical roadmap and aligning technology with business objectives.",
-    current: true,
   },
   {
     company: "Reserveit BD",
