@@ -1,0 +1,30 @@
+---
+import MainLayout from "@/layouts/main/main.layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout>
+  <div class="py-10">
+    <h1 class="font-black text-6xl text-foreground reveal-text">
+      Oops<span class="text-accent">!!</span>
+    </h1>
+    <p
+      class="mt-8 text-xl md:text-2xl text-muted max-w-2xl leading-relaxed reveal-text"
+    >
+      Looks like you're lost.
+    </p>
+    <p
+      class="text-xl md:text-2xl text-muted max-w-2xl leading-relaxed reveal-text"
+    >
+      Let's get you back on track.
+    </p>
+    <div class="pt-16">
+      <a href="/"
+        >Go Home <Icon
+          name="hugeicons:arrow-up-right-03"
+          class="w-5 h-5 text-muted group-hover:text-accent transition duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 reveal-arrow"
+        /></a
+      >
+    </div>
+  </div>
+</MainLayout>
