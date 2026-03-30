@@ -52,21 +52,22 @@ export const SKILL_SETS: SkillSet[] = [
 
 export const JOBS: Job[] = [
   {
-    company: "Cuebites Digital",
-    role: "Software Engineer",
-    period: "2026 — Present",
-    country: "AU",
-    description:
-      "Orchestrating the delivery of scalable, high-performance software solutions while bridging the gap between technical excellence and strategic business growth.",
-    current: true,
-  },
-  {
     company: "Defined Solution",
     role: "Senior Software Engineer",
-    period: "2023 — 2026",
+    period: "2023 — Present",
     country: "BD",
     description:
       "Spearheading the development of cutting-edge web applications. Playing a pivotal role in shaping the technical roadmap and aligning technology with business objectives.",
+    current: true,
+
+  },
+  {
+    company: "Cuebites Digital",
+    role: "Software Engineer",
+    period: "2026",
+    country: "AU",
+    description:
+      "Orchestrating the delivery of scalable, high-performance software solutions while bridging the gap between technical excellence and strategic business growth.",
   },
   {
     company: "Reserveit BD",
