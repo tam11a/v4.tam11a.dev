@@ -1,0 +1,103 @@
+---
+import SubLayout from "@/layouts/sub/sub.layout.astro";
+import { getCollection, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+  const honors = await getCollection("honors");
+  return honors.map((honor) => ({
+    params: { slug: honor.id },
+    props: { honor },
+  }));
+}
+
+const { honor } = Astro.props;
+const { Content } = await render(honor);
+
+// Get all honors sorted for prev/next navigation
+const allHonors = (await getCollection("honors")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const currentIndex = allHonors.findIndex((h) => h.id === honor.id);
+const prevHonor = currentIndex > 0 ? allHonors[currentIndex - 1] : null;
+const nextHonor =
+  currentIndex < allHonors.length - 1
+    ? allHonors[currentIndex + 1]
+    : null;
+---
+
+<SubLayout
+  title={`${honor.data.title} — Honors — Ibrahim Sadik Tamim`}
+  description={honor.data.description}
+  url={`https://tam11a.dev/honors/${honor.id}`}
+>
+  <!-- Hero -->
+  <header class="pt-20 pb-32 md:pb-52 min-h-[55vh] md:min-h-[60vh] flex flex-col justify-end">
+    <a href="/honors" class="font-mono text-textAccent text-sm font-semibold mb-6 reveal-text hover:text-accent transition-colors duration-300 cursor-hover w-fit">
+      # {honor.data.year}
+    </a>
+    <h1
+      class="font-black text-6xl md:text-9xl tracking-tighter text-foreground leading-[0.9] reveal-text"
+    >
+      {honor.data.title}<span class="text-accent tracking-normal">.</span>
+    </h1>
+    <div class="mt-8 text-xl md:text-2xl text-muted max-w-3xl leading-relaxed reveal-text">
+      {honor.data.description}
+    </div>
+
+    {
+      honor.data.badge && (
+        <div class="mt-8">
+          <span
+            class={`text-sm font-mono px-4 py-1.5 rounded-full border border-foreground/5 reveal-pop ${honor.data.badgeColor || "text-muted"}`}
+          >
+            {honor.data.badge}
+          </span>
+        </div>
+      )
+    }
+  </header>
+
+  <!-- Content -->
+  <hr class="animated-separator mb-12" />
+  <div class="prose max-w-3xl mb-24">
+    <Content />
+  </div>
+
+  <!-- Prev/Next Navigation -->
+  <hr class="animated-separator mb-12" />
+  <div class="grid md:grid-cols-2 gap-8 mb-24">
+    {
+      prevHonor ? (
+        <a
+          href={`/honors/${prevHonor.id}`}
+          class="group cursor-hover block"
+        >
+          <span class="text-xs font-mono text-textAccent uppercase tracking-wider reveal-text">
+            ← Previous
+          </span>
+          <p class="text-xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 mt-2 reveal-text">
+            {prevHonor.data.title}
+          </p>
+        </a>
+      ) : (
+        <div />
+      )
+    }
+    {
+      nextHonor && (
+        <a
+          href={`/honors/${nextHonor.id}`}
+          class="group cursor-hover block text-right"
+        >
+          <span class="text-xs font-mono text-textAccent uppercase tracking-wider reveal-text">
+            Next →
+          </span>
+          <p class="text-xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 mt-2 reveal-text">
+            {nextHonor.data.title}
+          </p>
+        </a>
+      )
+    }
+  </div>
+</SubLayout>
