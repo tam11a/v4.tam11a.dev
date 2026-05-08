@@ -1,18 +1,19 @@
 ---
 title: "Munchies Bangladesh"
-description: "UI Case Study of a Food and Grocery Delivery Platform"
+description: "Late-night food delivery platform — because cravings don't follow a schedule."
 link: "#"
 order: 1
-tags: ["UI/UX", "Case Study", "Figma", "Mobile App"]
+tags: ["UI/UX", "React", "Figma", "Mobile App", "Food Delivery"]
 featured: true
 ---
 
 ## Overview
 
-A comprehensive UI case study exploring the design and user experience of a modern food and grocery delivery platform targeting the Bangladeshi market. The project focused on creating an intuitive, visually appealing interface that simplifies the ordering process for users.
+Munchies Bangladesh tackles the one problem every night owl knows too well — finding food when the city sleeps. A late-night food delivery platform built for the after-hours crowd, Munchies connects hungry customers with restaurants and kitchens that stay open past midnight.
 
-## Key Design Decisions
+## Key Contributions
 
-- **User-Centric Approach** — Conducted user research to identify pain points in existing food delivery apps and designed solutions that address them.
-- **Visual Hierarchy** — Created a clear visual hierarchy that guides users through the ordering flow seamlessly.
-- **Responsive Design** — Designed for mobile-first with adaptive layouts for tablet and desktop viewports.
+- **UI/UX Development** — Crafted an intuitive, visually rich interface designed for fast ordering under low-light conditions with dark-mode-first aesthetics.
+- **Seamless Ordering Flow** — Designed a frictionless browse-to-checkout experience optimized for speed, because late-night users want food — not complexity.
+- **Real-Time Tracking** — Built live order tracking interfaces that keep users informed from kitchen to doorstep.
+- **Mobile-First Design** — Prioritized responsive mobile layouts since the majority of late-night orders happen on phones, in bed.

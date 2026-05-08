@@ -1,8 +1,4 @@
-import type {
-  AboutInfo,
-  Contact,
-  SkillSet,
-} from "./types";
+import type { AboutInfo, Contact, SkillSet } from "./types";
 
 export const ABOUT_INFO: AboutInfo[] = [
   { label: "Role", value: "Senior Software Engineer" },
@@ -54,6 +50,7 @@ export const CONTACTS: Contact[] = [
     href: "mailto:ibrahimsadiktamim@gmail.com",
   },
   { label: "GitHub", value: "tam11a", href: "https://github.com/tam11a" },
+  { label: "Dribbble", value: "tam11a", href: "https://dribbble.com/tam11a" },
   {
     label: "LinkedIn",
     value: "tam11a",

@@ -13,6 +13,7 @@ const {
   description = "Portfolio of Ibrahim Sadik Tamim, a versatile coder, designer, and thinker crafting digital experiences with passion and precision based in Dhaka, Bangladesh.",
   thumbnail = "/thumbnail.png",
   url = "https://tam11a.dev/",
+  footerNav = true
 } = Astro.props;
 ---
 
@@ -56,7 +57,7 @@ const {
       <section class="max-w-5xl mx-auto px-6 py-10">
         <slot />
         <!-- Footer -->
-        <Footer showNav={true} />
+        <Footer showNav={footerNav} />
       </section>
     </main>
     <!-- Scripts -->

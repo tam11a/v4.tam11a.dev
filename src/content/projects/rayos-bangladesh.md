@@ -1,21 +1,19 @@
 ---
 title: "Rayos Bangladesh"
-description: "B2C E Commerce Platform"
+description: "Medical equipment marketplace making healthcare tech accessible to everyday consumers."
 link: "#"
 order: 4
-tags: ["B2C", "E-Commerce", "React", "Next.js", "TypeScript"]
+tags: ["B2C", "E-Commerce", "React", "Next.js", "TypeScript", "Healthcare"]
 featured: false
 ---
 
 ## Overview
 
-As the Team Lead and Software Engineer, I led the development of Rayos, a B2C platform designed to enhance online shopping experiences. My team and I built a scalable and efficient system, ensuring a seamless user journey from browsing to checkout.
+Rayos Bangladesh brings medical equipment out of hospital procurement catalogs and into the hands of regular consumers. A consumer-facing marketplace for medical devices and health equipment — from blood pressure monitors to mobility aids — designed to make healthcare technology approachable, trustworthy, and easy to purchase online.
 
 ## Key Contributions
 
-- **Project Leadership** — Led the development team, ensuring smooth collaboration and timely delivery.
-- **Full-Stack Development** — Contributed to both frontend and backend, implementing key features and optimizing performance.
-- **API & Database Management** — Designed and integrated backend services for efficient data handling and scalability.
-- **User Experience & Optimization** — Developed an intuitive UI and optimized performance for a seamless shopping experience.
-
-This project allowed me to apply my skills in team leadership, system architecture, and full-stack development, delivering a well-rounded B2C platform.
+- **Consumer-Friendly UX** — Designed an interface that demystifies medical equipment, with clear product descriptions, comparison tools, and guided recommendations for non-expert buyers.
+- **Trust-First Design** — Built credibility signals into every touchpoint — verified seller badges, certification displays, and transparent product specifications.
+- **Full-Stack Development** — Led frontend and backend implementation, ensuring a performant and secure platform for handling sensitive health-related transactions.
+- **Search & Discovery** — Developed intelligent filtering and categorization that helps users find the right equipment by condition, use-case, or medical need.
