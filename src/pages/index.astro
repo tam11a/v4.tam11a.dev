@@ -4,15 +4,25 @@ import JobCard from "@/components/JobCard.astro";
 import HonorCard from "@/components/HonorCard.astro";
 import MainLayout from "@/layouts/main/main.layout.astro";
 import ProjectCard from "@/components/ProjectCard.astro";
+import Footer from "@/components/Footer.astro";
+import { getCollection } from "astro:content";
 import {
   ABOUT_INFO,
   SKILL_SETS,
-  JOBS,
-  HONORS,
-  PROJECTS,
   CONTACTS,
 } from "@/scripts/constants";
 import { Icon } from "astro-icon/components";
+
+// Query content collections
+const experiences = (await getCollection("experiences")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const honors = (await getCollection("honors")).sort(
+  (a, b) => a.data.order - b.data.order
+);
 ---
 
 <MainLayout>
@@ -93,21 +103,92 @@ import { Icon } from "astro-icon/components";
   <!-- Work Section -->
   <Section title="Work" index="003">
     <div class="space-y-20">
-      {JOBS.map((job) => <JobCard job={job} />)}
+      {
+        experiences.map((exp) => (
+          <JobCard
+            job={{
+              company: exp.data.company,
+              role: exp.data.role,
+              period: exp.data.period,
+              description: exp.data.description,
+              country: exp.data.country,
+              current: exp.data.current,
+            }}
+          />
+        ))
+      }
+    </div>
+    <div class="mt-12">
+      <a
+        href="/experience"
+        class="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors duration-300 font-mono text-sm uppercase tracking-wider cursor-hover group reveal-text"
+      >
+        View all experience
+        <Icon
+          name="hugeicons:arrow-up-right-03"
+          class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+        />
+      </a>
     </div>
   </Section>
 
   <!-- Honors Section -->
   <Section title="Honors" index="004">
     <div class="space-y-12">
-      {HONORS.map((honor) => <HonorCard honor={honor} />)}
+      {
+        honors.map((honor) => (
+          <HonorCard
+            honor={{
+              title: honor.data.title,
+              award: honor.data.award,
+              description: honor.data.description,
+              badge: honor.data.badge,
+              badgeColor: honor.data.badgeColor,
+            }}
+          />
+        ))
+      }
+    </div>
+    <div class="mt-12">
+      <a
+        href="/honors"
+        class="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors duration-300 font-mono text-sm uppercase tracking-wider cursor-hover group reveal-text"
+      >
+        View all honors
+        <Icon
+          name="hugeicons:arrow-up-right-03"
+          class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+        />
+      </a>
     </div>
   </Section>
 
   <!-- Projects Section -->
   <Section title="Projects" index="005">
     <div class="space-y-12">
-      {PROJECTS.map((project) => <ProjectCard project={project} />)}
+      {
+        projects.map((project) => (
+          <ProjectCard
+            project={{
+              title: project.data.title,
+              description: project.data.description,
+              link: `/projects/${project.id}`,
+            }}
+          />
+        ))
+      }
+    </div>
+    <div class="mt-12">
+      <a
+        href="/projects"
+        class="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors duration-300 font-mono text-sm uppercase tracking-wider cursor-hover group reveal-text"
+      >
+        View all projects
+        <Icon
+          name="hugeicons:arrow-up-right-03"
+          class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+        />
+      </a>
     </div>
   </Section>
 
@@ -158,38 +239,5 @@ import { Icon } from "astro-icon/components";
     </footer>
   </div>
 
-  <div
-    class="text-xs font-mono text-textAccent text-center pb-[10vh] uppercase tracking-widest space-y-5"
-  >
-    <p class="reveal-text">
-      &copy; {new Date().getFullYear()} Ibrahim Sadik Tamim
-    </p>
-    <p class="inline-flex items-center justify-center gap-1 reveal-text">
-      Built with <a
-        href="https://astro.build"
-        target="_blank"
-        class="text-xl reveal-pop cursor-hover"
-        ><Icon name="vscode-icons:file-type-astro" title="Astro" /></a
-      >, <a
-        href="https://tailwindcss.com"
-        target="_blank"
-        class="text-xl reveal-pop cursor-hover"
-        ><Icon name="vscode-icons:file-type-tailwind" title="Tailwind CSS" /></a
-      > & <a
-        href="https://gsap.com"
-        target="_blank"
-        class="text-3xl reveal-pop text-[#88ce02] cursor-hover"
-        ><Icon name="simple-icons:gsap" title="GSAP" /></a
-      >
-    </p>
-    <p class="reveal-pop mt-10">
-      <a
-        href="/resume_ibrahimsadiktamim.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-accent px-3 py-1 rounded-full border border-foreground/5 hover:border-accent hover:bg-accent/10 reveal-pop transition cursor-hover"
-        >Download Resume</a
-      >
-    </p>
-  </div>
+  <Footer />
 </MainLayout>

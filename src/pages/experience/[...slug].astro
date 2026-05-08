@@ -1,0 +1,175 @@
+---
+import SubLayout from "@/layouts/sub/sub.layout.astro";
+import { getCollection, render } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+export async function getStaticPaths() {
+  const experiences = await getCollection("experiences");
+  return experiences.map((exp) => ({
+    params: { slug: exp.id },
+    props: { exp },
+  }));
+}
+
+const { exp } = Astro.props;
+const { Content } = await render(exp);
+
+// Get all experiences sorted for prev/next navigation
+const allExperiences = (await getCollection("experiences")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const currentIndex = allExperiences.findIndex((e) => e.id === exp.id);
+const prevExp = currentIndex > 0 ? allExperiences[currentIndex - 1] : null;
+const nextExp =
+  currentIndex < allExperiences.length - 1
+    ? allExperiences[currentIndex + 1]
+    : null;
+---
+
+<SubLayout
+  title={`${exp.data.company} — Experience — Ibrahim Sadik Tamim`}
+  description={exp.data.description}
+  url={`https://tam11a.dev/experience/${exp.id}`}
+>
+  <!-- Hero -->
+  <header class="pt-20 pb-32 md:pb-52 min-h-[55vh] md:min-h-[60vh] flex flex-col justify-end">
+    <a href="/experience" class="font-mono text-textAccent text-sm font-semibold mb-6 reveal-text hover:text-accent transition-colors duration-300 cursor-hover w-fit">
+      # {exp.data.period}
+    </a>
+    <h1
+      class="font-black text-6xl md:text-9xl tracking-tighter text-foreground leading-[0.9] reveal-text"
+    >
+      {exp.data.company}<span class="text-accent tracking-normal">.</span>
+    </h1>
+    <div class="mt-8 text-xl md:text-2xl text-muted max-w-3xl leading-relaxed reveal-text">
+      {exp.data.description}
+    </div>
+  </header>
+
+  <!-- Meta Section -->
+  <section class="mb-12">
+    <!-- Meta Grid -->
+    <div
+      class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-white/5"
+    >
+      <div>
+        <p
+          class="text-xs font-mono text-textAccent uppercase tracking-wider mb-2 reveal-text"
+        >
+          Role
+        </p>
+        <p class="text-foreground font-semibold reveal-text">
+          {exp.data.role}
+        </p>
+      </div>
+      <div>
+        <p
+          class="text-xs font-mono text-textAccent uppercase tracking-wider mb-2 reveal-text"
+        >
+          Type
+        </p>
+        <p class="text-foreground font-semibold reveal-text">
+          {exp.data.type}
+        </p>
+      </div>
+      <div>
+        <p
+          class="text-xs font-mono text-textAccent uppercase tracking-wider mb-2 reveal-text"
+        >
+          Timeline
+        </p>
+        <p class="text-foreground font-semibold reveal-text">
+          {exp.data.period}
+        </p>
+      </div>
+      {
+        exp.data.country && (
+          <div>
+            <p class="text-xs font-mono text-textAccent uppercase tracking-wider mb-2 reveal-text">
+              Location
+            </p>
+            <p class="text-foreground font-semibold reveal-text">
+              {exp.data.country}
+            </p>
+          </div>
+        )
+      }
+    </div>
+
+    <!-- Tags -->
+    {
+      exp.data.tags && (
+        <div class="flex flex-wrap gap-2 mt-6">
+          {exp.data.tags.map((tag: string) => (
+            <span class="text-xs font-mono text-textAccent px-3 py-1 rounded-full border border-white/5 reveal-pop">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )
+    }
+
+    <!-- Website Link -->
+    {
+      exp.data.website && (
+        <div class="mt-8">
+          <a
+            href={exp.data.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors duration-300 font-mono text-sm uppercase tracking-wider cursor-hover group reveal-text"
+          >
+            Visit Website
+            <Icon
+              name="hugeicons:arrow-up-right-03"
+              class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
+            />
+          </a>
+        </div>
+      )
+    }
+  </section>
+
+  <!-- Content -->
+  <hr class="animated-separator mb-12" />
+  <div class="prose max-w-3xl mb-24">
+    <Content />
+  </div>
+
+  <!-- Prev/Next Navigation -->
+  <hr class="animated-separator mb-12" />
+  <div class="grid md:grid-cols-2 gap-8 mb-24">
+    {
+      prevExp ? (
+        <a
+          href={`/experience/${prevExp.id}`}
+          class="group cursor-hover block"
+        >
+          <span class="text-xs font-mono text-textAccent uppercase tracking-wider reveal-text">
+            ← Previous
+          </span>
+          <p class="text-xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 mt-2 reveal-text">
+            {prevExp.data.company}
+          </p>
+        </a>
+      ) : (
+        <div />
+      )
+    }
+    {
+      nextExp && (
+        <a
+          href={`/experience/${nextExp.id}`}
+          class="group cursor-hover block text-right"
+        >
+          <span class="text-xs font-mono text-textAccent uppercase tracking-wider reveal-text">
+            Next →
+          </span>
+          <p class="text-xl font-bold text-foreground group-hover:text-accent transition-colors duration-300 mt-2 reveal-text">
+            {nextExp.data.company}
+          </p>
+        </a>
+      )
+    }
+  </div>
+</SubLayout>

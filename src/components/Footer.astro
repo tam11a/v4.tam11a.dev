@@ -1,0 +1,110 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  showNav?: boolean;
+}
+
+const { showNav = false } = Astro.props;
+
+const navLinks = [
+  { label: "Home", href: "/", index: "000" },
+  { label: "Experience", href: "/experience", index: "EXP" },
+  { label: "Projects", href: "/projects", index: "PRJ" },
+  { label: "Honors", href: "/honors", index: "HNR" },
+  { label: "Links", href: "/links", index: "LNK" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<div class="pb-[10vh]">
+  {
+    showNav && (
+      <div class="mb-20">
+        <hr class="animated-separator mb-12" />
+        <div class="grid md:grid-cols-4 gap-y-8 gap-x-12">
+          <div class="md:col-span-1">
+            <a
+              href="/"
+              class="font-black text-3xl tracking-tighter text-foreground hover:text-foreground/80 transition-colors duration-300 cursor-hover reveal-text"
+            >
+              tam<span class="text-accent tracking-normal">.</span>
+            </a>
+          </div>
+          <div class="md:col-span-3 flex flex-col space-y-0">
+            {navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="group block cursor-hover relative"
+              >
+                <div class="flex items-center justify-between py-5">
+                  <span
+                    class={`font-mono text-sm uppercase tracking-wider transition-colors duration-300 reveal-text ${
+                      currentPath === link.href ||
+                      (link.href !== "/" && currentPath.startsWith(link.href))
+                        ? "text-accent"
+                        : "text-muted group-hover:text-accent"
+                    }`}
+                  >
+                    <span class="text-textAccent mr-3 text-xs">
+                      {link.index}
+                    </span>
+                    {link.label}
+                  </span>
+                  <Icon
+                    name="hugeicons:arrow-up-right-03"
+                    class={`w-4 h-4 transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 reveal-arrow ${
+                      currentPath === link.href ||
+                      (link.href !== "/" && currentPath.startsWith(link.href))
+                        ? "text-accent"
+                        : "text-muted group-hover:text-accent"
+                    }`}
+                  />
+                </div>
+                <hr class="animated-separator" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  <div
+    class="text-xs font-mono text-textAccent text-center uppercase tracking-widest space-y-5"
+  >
+    <p class="reveal-text">
+      &copy; {new Date().getFullYear()} Ibrahim Sadik Tamim
+    </p>
+
+    <p class="inline-flex items-center justify-center gap-1 reveal-text">
+      Built with <a
+        href="https://astro.build"
+        target="_blank"
+        class="text-xl reveal-pop cursor-hover"
+        ><Icon name="vscode-icons:file-type-astro" title="Astro" /></a
+      >, <a
+        href="https://tailwindcss.com"
+        target="_blank"
+        class="text-xl reveal-pop cursor-hover"
+        ><Icon name="vscode-icons:file-type-tailwind" title="Tailwind CSS" /></a
+      > & <a
+        href="https://gsap.com"
+        target="_blank"
+        class="text-3xl reveal-pop text-[#88ce02] cursor-hover"
+        ><Icon name="simple-icons:gsap" title="GSAP" /></a
+      >
+    </p>
+
+    <p class="reveal-pop mt-10">
+      <a
+        href="/resume_ibrahimsadiktamim.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent px-3 py-1 rounded-full border border-foreground/5 hover:border-accent hover:bg-accent/10 reveal-pop transition cursor-hover"
+        >Download Resume</a
+      >
+    </p>
+  </div>
+</div>

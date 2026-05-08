@@ -1,9 +1,6 @@
 import type {
   AboutInfo,
   Contact,
-  Honor,
-  Job,
-  Project,
   SkillSet,
 } from "./types";
 
@@ -47,88 +44,6 @@ export const SKILL_SETS: SkillSet[] = [
   {
     category: "Languages",
     items: ["English (Professional)", "Bengali (Native)", "Hindi (Bilingual)"],
-  },
-];
-
-export const JOBS: Job[] = [
-  {
-    company: "Defined Solution",
-    role: "Senior Software Engineer",
-    period: "2023 — Present",
-    country: "BD",
-    description:
-      "Spearheading the development of cutting-edge web applications. Playing a pivotal role in shaping the technical roadmap and aligning technology with business objectives.",
-    current: true,
-
-  },
-  {
-    company: "Cuebites Digital",
-    role: "Software Engineer",
-    period: "2026",
-    country: "AU",
-    description:
-      "Orchestrating the delivery of scalable, high-performance software solutions while bridging the gap between technical excellence and strategic business growth.",
-  },
-  {
-    company: "Reserveit BD",
-    role: "Senior Full-Stack Engineer",
-    period: "2021 — 2023",
-    country: "BD",
-    description:
-      "Built Bangladesh's first online restaurant reservation platform. Created a simple, user-friendly application for booking seats for dine-outs.",
-  },
-  {
-    company: "Planet X Inc.",
-    role: "Jr. Full-Stack Engineer",
-    period: "2021",
-    country: "BD",
-    description:
-      "Contributed to various web development projects, focusing on front-end development and user experience enhancements.",
-  },
-];
-
-export const HONORS: Honor[] = [
-  {
-    title: "CSE Fest 2K24 Hackathon",
-    award: "Champion",
-    description: "1st Place — 2024",
-    badge: "Champion",
-    badgeColor: "text-accent/80",
-  },
-  {
-    title: "NASA Space Apps Challenge",
-    award: "Champion",
-    description: "National Champion Bangladesh — 2020",
-    badge: "Champion",
-    badgeColor: "text-accent/80",
-  },
-];
-
-export const PROJECTS: Project[] = [
-  {
-    title: "Munchies Bangladesh",
-    description: "UI Case Study of a Food and Grocery Delivery Platform",
-    link: "#",
-  },
-  {
-    title: "Sultan's Dine",
-    description: "UI Case Study of a Food Delivery App for a Restaurant",
-    link: "#",
-  },
-  {
-    title: "Grade Limited",
-    description: "B2B E Commerce & Digitalization",
-    link: "#",
-  },
-  {
-    title: "Rayos Bangladesh",
-    description: "B2C E Commerce Platform",
-    link: "#",
-  },
-  {
-    title: "PND Service Bangladesh",
-    description: "B2B & B2C E Commerce Platform",
-    link: "#",
   },
 ];
 

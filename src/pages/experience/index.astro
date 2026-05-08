@@ -1,0 +1,95 @@
+---
+import SubLayout from "@/layouts/sub/sub.layout.astro";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+const experiences = (await getCollection("experiences")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<SubLayout
+  title="Experience — Ibrahim Sadik Tamim"
+  description="Professional experience of Ibrahim Sadik Tamim across startups, corporates, and brands."
+  url="https://tam11a.dev/experience"
+>
+  <!-- Hero -->
+  <header class="pt-20 pb-32 md:pb-52 min-h-[55vh] md:min-h-[60vh] flex flex-col justify-end">
+    <a href="/" class="font-mono text-textAccent text-sm font-semibold mb-6 reveal-text hover:text-accent transition-colors duration-300 cursor-hover w-fit">
+      # EXP
+    </a>
+    <h1
+      class="font-black text-6xl md:text-9xl tracking-tighter text-foreground leading-[0.9] reveal-text"
+    >
+      Experience<span class="text-accent tracking-normal">.</span>
+    </h1>
+    <div class="mt-8 text-xl md:text-2xl text-muted max-w-2xl leading-relaxed reveal-text">
+      It's been a pleasure to work with a few startups, corporates and brands.
+    </div>
+  </header>
+
+  <!-- Experience List -->
+  <hr class="animated-separator mb-12" />
+  <div class="space-y-0">
+    {
+      experiences.map((exp) => (
+        <a
+          href={`/experience/${exp.id}`}
+          class="group block cursor-hover py-10 border-b border-white/5 first:pt-0 last:border-0 transition-colors duration-300"
+        >
+          <div class="grid md:grid-cols-4 gap-y-4 gap-x-12">
+            {/* Left: Period */}
+            <div class="md:col-span-1">
+              <span class="font-mono text-xs text-textAccent uppercase tracking-wider reveal-text">
+                {exp.data.period}
+              </span>
+              {exp.data.current && (
+                <span class="inline-block ml-2 text-xs font-mono border border-foreground/5 text-accent/80 px-2 py-0.5 rounded-full reveal-pop">
+                  Current
+                </span>
+              )}
+            </div>
+
+            {/* Right: Content */}
+            <div class="md:col-span-3">
+              <div class="flex items-center justify-between mb-2">
+                <h2 class="text-2xl md:text-3xl font-display font-bold text-foreground group-hover:text-accent transition-colors duration-300 reveal-text">
+                  {exp.data.company}
+                  {exp.data.country && (
+                    <span class="text-xs text-textAccent ml-2">
+                      {exp.data.country}
+                    </span>
+                  )}
+                </h2>
+                <Icon
+                  name="hugeicons:arrow-up-right-03"
+                  class="w-5 h-5 text-muted group-hover:text-accent transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1 reveal-arrow"
+                />
+              </div>
+
+              <p class="text-sm font-mono text-textAccent mb-4 reveal-text">
+                {exp.data.role}
+                <span class="text-foreground/20 mx-2">/</span>
+                {exp.data.type}
+              </p>
+
+              <p class="text-muted leading-relaxed max-w-2xl reveal-text">
+                {exp.data.description}
+              </p>
+
+              {exp.data.tags && (
+                <div class="flex flex-wrap gap-2 mt-4">
+                  {exp.data.tags.map((tag: string) => (
+                    <span class="text-xs font-mono text-textAccent px-2 py-0.5 rounded-full border border-white/5 reveal-pop">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</SubLayout>
