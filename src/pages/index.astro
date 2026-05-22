@@ -23,6 +23,9 @@ const projects = (await getCollection("projects")).sort(
 const honors = (await getCollection("honors")).sort(
   (a, b) => a.data.order - b.data.order
 );
+
+
+
 ---
 
 <MainLayout>
