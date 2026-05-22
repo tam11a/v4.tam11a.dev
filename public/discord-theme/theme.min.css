@@ -818,11 +818,11 @@ body {
   --button-border: hsl(0, 0%, 100%, 0.1); /* neutral border color of buttons */
 
   /* base colors */
-  --red-1: oklch(76% 0.12 0);
-  --red-2: oklch(70% 0.12 0);
-  --red-3: oklch(64% 0.12 0);
-  --red-4: oklch(58% 0.12 0);
-  --red-5: oklch(52% 0.12 0);
+  --red-1: oklch(75.244% 0.11549 20.101);
+  --red-2: oklch(69.22% 0.11685 20.467);
+  --red-3: oklch(63.162% 0.11581 20.827);
+  --red-4: oklch(57.138% 0.11609 21.34);
+  --red-5: oklch(51.029% 0.11642 22.029);
 
   --green-1: oklch(76% 0.11 170);
   --green-2: oklch(70% 0.11 170);
@@ -830,11 +830,11 @@ body {
   --green-4: oklch(58% 0.11 170);
   --green-5: oklch(52% 0.11 160);
 
-  --blue-1: oklch(76% 0.1 215);
-  --blue-2: oklch(70% 0.1 215);
-  --blue-3: oklch(64% 0.1 215);
-  --blue-4: oklch(58% 0.1 215);
-  --blue-5: oklch(52% 0.1 215);
+  --blue-1: oklch(75% 0.12 35);
+  --blue-2: oklch(70% 0.12 35);
+  --blue-3: oklch(65% 0.12 35);
+  --blue-4: oklch(60% 0.12 35);
+  --blue-5: oklch(55% 0.12 35);
 
   --yellow-1: oklch(80% 0.11 90);
   --yellow-2: oklch(74% 0.11 90);

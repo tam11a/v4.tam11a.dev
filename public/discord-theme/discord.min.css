@@ -175,11 +175,11 @@ body {
   --green-4: oklch(60% 0.11 170);
   --green-5: oklch(55% 0.11 160);
 
-  --blue-1: oklch(75% 0.1 215);
-  --blue-2: oklch(70% 0.1 215);
-  --blue-3: oklch(65% 0.1 215);
-  --blue-4: oklch(60% 0.1 215);
-  --blue-5: oklch(55% 0.1 215);
+  --blue-1: oklch(75% 0.12 35);
+  --blue-2: oklch(70% 0.12 35);
+  --blue-3: oklch(65% 0.12 35);
+  --blue-4: oklch(60% 0.12 35);
+  --blue-5: oklch(55% 0.12 35);
 
   --yellow-1: oklch(80% 0.11 90);
   --yellow-2: oklch(75% 0.11 90);
